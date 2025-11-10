@@ -3,9 +3,11 @@ from .models import HomeSection, Developer, CV, Service, Skill, ContactInfo, Cou
 from .forms import ContactForm
 from django.core.mail import send_mail, EmailMessage
 from portfolio.settings import EMAIL_HOST_USER
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse, Http404
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
+import os
+from django.conf import settings
 
 def index(request):
     #Fetch data from models for each section
