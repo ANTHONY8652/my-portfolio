@@ -430,7 +430,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
                         </p>
     
 	
-						<p><a href="{% static 'portfolio/resume/My CV.pdf' %}" class="btn btn-primary py-3 px-3" download="Anthony Githinji CV.pdf">Download my CV</a></p>
+						<p><a href="{% url 'download_cv' %}" class="btn btn-primary py-3 px-3">Download my CV <i class="icon-download4"></i></a></p>
                         				</div>
 					   				</div>
 					   			</div>
@@ -472,6 +472,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 										<h2 class="colorlib-heading">Who Am I?</h2>
 										<p><strong>Hi I'm Anthony kang'eri Githinji</strong><p>I specialize in creating efficient, secure, and scalable backend systems that power modern web applications. My expertise lies in building and optimizing APIs, managing complex databases, and implementing robust server-side logic to deliver seamless performance.</p>  
                     <p>With a strong foundation in Python and Django, I am passionate about solving complex technical challenges and crafting backend architectures that enhance functionality and user experience. I take pride in writing clean, maintainable code and ensuring every solution is built to last.</p>
+                    <p><strong>Featured Achievement:</strong> I recently developed a comprehensive <a href="https://github.com/ANTHONY8652/Library-Management-System-API" target="_blank" style="color: #007bff; font-weight: 600;">Library Management System API</a> that demonstrates my ability to build production-ready backend solutions. This project showcases advanced Django REST Framework skills, complex database relationships, authentication systems, and API design best practices - exactly the kind of expertise that drives business value.</p>
                     </div>
 								</div>
 							</div>
@@ -891,6 +892,52 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 				</div>
 			</section>
 
+			<!-- Featured Project: Library Management API -->
+			<section class="colorlib-featured-project" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 100px 0; margin: 80px 0;">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center animate-box" data-animate-effect="fadeInUp">
+							<span class="heading-meta" style="color: rgba(255,255,255,0.8);">Featured Project</span>
+							<h2 class="colorlib-heading" style="color: #fff; font-size: 42px; margin-bottom: 30px;">Library Management System API</h2>
+							<p style="color: rgba(255,255,255,0.9); font-size: 18px; line-height: 1.8; margin-bottom: 40px;">
+								A production-ready RESTful API built with Django REST Framework that demonstrates enterprise-level backend development. This comprehensive system showcases my ability to architect scalable solutions, implement complex business logic, and deliver robust APIs that power real-world applications.
+							</p>
+							<div class="row" style="margin-top: 50px;">
+								<div class="col-md-4 text-center animate-box" data-animate-effect="fadeInUp">
+									<div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px);">
+										<i class="icon-layers" style="font-size: 48px; color: #fff; margin-bottom: 20px;"></i>
+										<h4 style="color: #fff; margin-bottom: 15px;">RESTful Architecture</h4>
+										<p style="color: rgba(255,255,255,0.9);">Clean, well-structured API endpoints following REST principles for optimal performance and maintainability.</p>
+									</div>
+								</div>
+								<div class="col-md-4 text-center animate-box" data-animate-effect="fadeInUp" style="animation-delay: 0.1s;">
+									<div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px);">
+										<i class="icon-data" style="font-size: 48px; color: #fff; margin-bottom: 20px;"></i>
+										<h4 style="color: #fff; margin-bottom: 15px;">Database Design</h4>
+										<p style="color: rgba(255,255,255,0.9);">Complex relational models with optimized queries, ensuring data integrity and high performance.</p>
+									</div>
+								</div>
+								<div class="col-md-4 text-center animate-box" data-animate-effect="fadeInUp" style="animation-delay: 0.2s;">
+									<div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; backdrop-filter: blur(10px);">
+										<i class="icon-lock" style="font-size: 48px; color: #fff; margin-bottom: 20px;"></i>
+										<h4 style="color: #fff; margin-bottom: 15px;">Security & Auth</h4>
+										<p style="color: rgba(255,255,255,0.9);">Token-based authentication, permission systems, and secure API endpoints protecting sensitive data.</p>
+									</div>
+								</div>
+							</div>
+							<div style="margin-top: 50px;">
+								<a href="https://github.com/ANTHONY8652/Library-Management-System-API" target="_blank" class="btn btn-primary" style="background: #fff; color: #667eea; padding: 15px 40px; font-size: 16px; margin-right: 15px;">
+									View on GitHub <i class="icon-github"></i>
+								</a>
+								<a href="#" data-nav-section="contact" class="btn btn-primary" style="background: transparent; border: 2px solid #fff; color: #fff; padding: 15px 40px; font-size: 16px;">
+									Hire Me for Your Project
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section class="colorlib-work" data-section="work">
 				<div class="colorlib-narrow-content">
 					<div class="row">
@@ -906,15 +953,15 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 					</div>
 					<div class="row">
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url({% static 'portfolio/images/img-1.jpg' %});">
+							<div class="project" style="background-image: url({% static 'portfolio/images/img-1.jpg' %}); border: 3px solid #667eea; box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);">
 								<div class="desc">
 									<div class="con">
-										<h3><a href="https://github.com/ANTHONY8652/Library-Management-System-API">Project 01</a></h3>
-										<span>Library Management API</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										<h3><a href="https://github.com/ANTHONY8652/Library-Management-System-API" target="_blank" style="color: #fff; font-weight: 700;">⭐ Featured: Library Management API</a></h3>
+										<span style="background: rgba(102, 126, 234, 0.9); padding: 5px 15px; border-radius: 20px; display: inline-block; margin: 10px 0;">Enterprise-Grade Backend Solution</span>
+										<p style="margin-top: 15px; color: rgba(255,255,255,0.95);">Production-ready API with authentication, complex relationships, and optimized database queries. Demonstrates professional Django REST Framework expertise.</p>
+										<p class="icon" style="margin-top: 20px;">
+											<span><a href="https://github.com/ANTHONY8652/Library-Management-System-API" target="_blank"><i class="icon-github"></i> View Code</a></span>
+											<span><a href="https://github.com/ANTHONY8652/Library-Management-System-API" target="_blank"><i class="icon-eye"></i> Explore</a></span>
 										</p>
 									</div>
 								</div>
@@ -1018,8 +1065,16 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 								<a href="https://github.com/ANTHONY8652/Library-Management-System-API" class="blog-img"><img src="{% static 'portfolio/images/blog-1.jpg' %}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
 									<span><small>October, 2024 </small> | <small> Web Development </small> | <small> <i class="icon-bubble3"></i> </small></span>
-									<h3><a href="https://github.com/ANTHONY8652/Library-Management-System-API">Library Management API</a></h3>
-									<p>This API provides comprehensive functionality for managing a library system, enabling users to interact with a digital library platform. It supports user authentication, book management, and user interactions, including borrowing and returning books, managing user accounts, and tracking book availability.</p>
+									<h3><a href="https://github.com/ANTHONY8652/Library-Management-System-API" target="_blank" style="color: #667eea;">⭐ Library Management API - Featured Project</a></h3>
+									<p><strong>Why This Project Makes Me Hireable:</strong> This isn't just another API - it's a demonstration of enterprise-level backend development skills. Built with Django REST Framework, it features:</p>
+									<ul style="text-align: left; margin-top: 15px; padding-left: 20px;">
+										<li><strong>Complex Database Relationships:</strong> Multi-table relationships with optimized queries</li>
+										<li><strong>Authentication & Authorization:</strong> Token-based JWT authentication with role-based permissions</li>
+										<li><strong>Business Logic:</strong> Real-world features like book borrowing, return tracking, and availability management</li>
+										<li><strong>API Best Practices:</strong> RESTful design, proper HTTP status codes, error handling, and documentation</li>
+										<li><strong>Scalability:</strong> Designed to handle growing data and user bases efficiently</li>
+									</ul>
+									<p style="margin-top: 15px;"><strong>This project proves I can:</strong> Architect production systems, write maintainable code, implement security best practices, and deliver solutions that solve real business problems. <a href="https://github.com/ANTHONY8652/Library-Management-System-API" target="_blank" style="color: #667eea; font-weight: 600;">Explore the code →</a></p>
 								</div>
 							</div>
 						</div>
