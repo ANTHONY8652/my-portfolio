@@ -34,7 +34,7 @@
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="{% static 'portfolio/css/animate.css' %}">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="{% static 'portfolio/css/icomoon.css' %}">
+	<link rel="stylesheet" href="{% static 'portfolio/fonts/icomoon.css' %}">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="{% static 'portfolio/css/bootstrap.css' %}">
 	<!-- Flexslider  -->
@@ -47,8 +47,325 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
 
+	<!-- Custom UI Polish Styles -->
+	<style>
+		/* Enhanced Typography */
+		.colorlib-heading {
+			font-weight: 600;
+			letter-spacing: -0.5px;
+		}
+		
+		.heading-meta {
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-size: 12px;
+			font-weight: 600;
+		}
+
+		/* Smooth Transitions */
+		.services, .project, .blog-entry, .btn, .timeline-entry {
+			transition: all 0.3s ease;
+		}
+
+		/* Enhanced Button Styling */
+		.btn-primary {
+			border-radius: 50px;
+			padding: 12px 30px;
+			font-weight: 500;
+			letter-spacing: 0.5px;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+			transition: all 0.3s ease;
+		}
+
+		.btn-primary:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+		}
+
+		.btn-hire {
+			border-radius: 50px;
+			padding: 12px 35px;
+			font-weight: 500;
+			transition: all 0.3s ease;
+		}
+
+		.btn-hire:hover {
+			transform: translateY(-2px);
+		}
+
+		/* Enhanced Service Cards */
+		.services {
+			border-radius: 15px;
+			padding: 30px 20px;
+			height: 100%;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+		}
+
+		.services:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+		}
+
+		.services .icon, .services .icon2 {
+			transition: transform 0.3s ease;
+		}
+
+		.services:hover .icon, .services:hover .icon2 {
+			transform: scale(1.1);
+		}
+
+		/* Enhanced Project Cards */
+		.project {
+			border-radius: 15px;
+			overflow: hidden;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+		}
+
+		.project:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+		}
+
+		.project .desc {
+			background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+		}
+
+		/* Enhanced Blog Cards */
+		.blog-entry {
+			border-radius: 15px;
+			overflow: hidden;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+			background: #fff;
+		}
+
+		.blog-entry:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+		}
+
+		.blog-entry img {
+			transition: transform 0.5s ease;
+		}
+
+		.blog-entry:hover img {
+			transform: scale(1.05);
+		}
+
+		/* Enhanced Progress Bars */
+		.progress {
+			height: 8px;
+			border-radius: 10px;
+			background: #f0f0f0;
+			overflow: visible;
+		}
+
+		.progress-bar {
+			border-radius: 10px;
+			position: relative;
+			transition: width 1.5s ease;
+		}
+
+		.progress-bar span {
+			position: absolute;
+			right: 0;
+			top: -25px;
+			font-weight: 600;
+			font-size: 14px;
+			color: #333;
+		}
+
+		/* Enhanced Form Styling */
+		.form-control {
+			border-radius: 10px;
+			border: 2px solid #e0e0e0;
+			padding: 12px 20px;
+			transition: all 0.3s ease;
+		}
+
+		.form-control:focus {
+			border-color: #007bff;
+			box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
+			outline: none;
+		}
+
+		/* Enhanced Timeline */
+		.timeline-entry {
+			transition: all 0.3s ease;
+		}
+
+		.timeline-entry:hover {
+			transform: translateX(5px);
+		}
+
+		.timeline-icon {
+			transition: all 0.3s ease;
+		}
+
+		.timeline-entry:hover .timeline-icon {
+			transform: scale(1.1);
+		}
+
+		/* Enhanced Social Icons */
+		.colorlib-footer ul li a {
+			transition: all 0.3s ease;
+			display: inline-block;
+		}
+
+		.colorlib-footer ul li a:hover {
+			transform: translateY(-3px) scale(1.1);
+			color: #007bff;
+		}
+
+		/* Enhanced Hero Section */
+		.slider-text h1 {
+			font-weight: 700;
+			line-height: 1.2;
+		}
+
+		.slider-text h2 {
+			font-weight: 400;
+			opacity: 0.9;
+		}
+
+		/* Enhanced Accordion */
+		.accordion-button {
+			border-radius: 10px !important;
+			font-weight: 500;
+		}
+
+		.accordion-item {
+			border-radius: 10px;
+			margin-bottom: 15px;
+			border: 1px solid #e0e0e0;
+			overflow: hidden;
+		}
+
+		/* Enhanced Counter Section */
+		.colorlib-counter {
+			font-size: 48px;
+			font-weight: 700;
+			display: block;
+		}
+
+		.colorlib-counter-label {
+			display: block;
+			margin-top: 10px;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		/* Enhanced Author Image */
+		.author-img {
+			border-radius: 50%;
+			border: 4px solid #fff;
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+		}
+
+		/* Better Spacing */
+		.colorlib-narrow-content {
+			padding: 80px 0;
+		}
+
+		section {
+			padding: 80px 0;
+		}
+
+		/* Enhanced Work Menu */
+		.work-menu a {
+			transition: all 0.3s ease;
+			padding: 8px 20px;
+			border-radius: 25px;
+		}
+
+		.work-menu a:hover, .work-menu a.active {
+			background: #007bff;
+			color: #fff;
+		}
+
+		/* Smooth Scroll */
+		html {
+			scroll-behavior: smooth;
+		}
+
+		/* Enhanced Overlay */
+		.overlay {
+			background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+		}
+
+		/* Better Text Readability */
+		p {
+			line-height: 1.8;
+		}
+
+		/* Enhanced Hire Section */
+		.hire {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			border-radius: 20px;
+			padding: 50px;
+			text-align: center;
+			color: #fff;
+			box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+		}
+
+		.hire h2 {
+			color: #fff;
+			margin-bottom: 30px;
+		}
+
+		.hire .btn-hire {
+			background: #fff;
+			color: #667eea;
+			border: none;
+		}
+
+		.hire .btn-hire:hover {
+			background: #f8f9fa;
+			color: #764ba2;
+		}
+
+		/* Enhanced Contact Icons */
+		.colorlib-icon {
+			transition: all 0.3s ease;
+		}
+
+		.colorlib-feature:hover .colorlib-icon {
+			transform: scale(1.1);
+			color: #007bff;
+		}
+
+		/* Responsive Improvements */
+		@media (max-width: 768px) {
+			.colorlib-narrow-content {
+				padding: 40px 0;
+			}
+			
+			section {
+				padding: 40px 0;
+			}
+			
+			.hire {
+				padding: 30px 20px;
+			}
+		}
+
+		/* Loading Animation */
+		.btn-load-more {
+			transition: all 0.3s ease;
+		}
+
+		.btn-load-more:hover i {
+			animation: spin 1s linear infinite;
+		}
+
+		@keyframes spin {
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
+		}
+	</style>
+
 	<!-- Modernizr JS -->
-	<script src="static/portfolio/js/modernizr-2.6.2.min.js"></script>
+	<script src="{% static 'portfolio/js/modernizr-2.6.2.min.js' %}"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -61,7 +378,7 @@
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 			<div class="text-center">
-				<div class="author-img" style="background-image: url(static/portfolio/images/about.jpg);"></div>
+				<div class="author-img" style="background-image: url({% static 'portfolio/images/about.jpg' %});"></div>
 				<h1 id="colorlib-logo"><a href="index.html">Anthony Kang'eri Githinji</a></h1>
 				<span class="position"><a href="#">Back-End Developer</a> in Nairobi, Kenya</span>
 			</div>
@@ -84,7 +401,7 @@
 			<div class="colorlib-footer">
 				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright <script>document.write(new Date().getFullYear());</script> All rights reserved <i class="icon-heart" aria-hidden="true">Anthony Githinji</i><a href="https://colorlib.com" target="_blank"></a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Built by <a href="https://www.github.com/ANTHONY8652" target="_blank">Anthony</a></span><div class="author-img" style="background-image: url(static/portfolio/images/build.jpg);"</div></span></small></p>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>Built by <a href="https://www.github.com/ANTHONY8652" target="_blank">Anthony</a></span><div class="author-img" style="background-image: url({% static 'portfolio/images/build.jpg' %});"></div></small></p>
 				<ul>
 					<li><a href="https://www.github.com/ANTHONY8652"><i class="icon-github"></i></a></li>
 					<li><a href="#"><i class="icon-twitter2"></i></a></li>
@@ -99,7 +416,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 			<section id="colorlib-hero" class="js-fullheight" data-section="home">
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
-				   	<li style="background-image: url(static/portfolio/images/img_bg_8.jpg);">
+				   	<li style="background-image: url({% static 'portfolio/images/img_bg_8.jpg' %});">
 				   		<div class="overlay"></div>
 				   		<div class="container-fluid">
 				   			<div class="row">
@@ -111,15 +428,16 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
                         <p>
                            I'm a dedicated backend developer with a strong passion for creating efficient and scalable solutions. I specialize in building APIs, managing databases, and developing features that enhance user experience. Always eager to learn and grow, I thrive on solving complex challenges and bringing innovative ideas to life.
                         </p>
-                        <p><a class="btn btn-primary btn-learn" href="my-portfolio/resume/Anthony_Githinji_CV.pdf" target="_blank">Download My CV <i class="icon-download4"></i></a></p>
-                        
-											</div>
+    
+	
+						<p><a href="{% static 'portfolio/resume/My CV.pdf' %}" class="btn btn-primary py-3 px-3" download="Anthony Githinji CV.pdf">Download my CV</a></p>
+                        				</div>
 					   				</div>
 					   			</div>
 					   		</div>
 				   		</div>
 				   	</li>
-				   	<li style="background-image: url(static/portfolio/images/img_bg_7.png);">
+				   	<li style="background-image: url({% static 'portfolio/images/img_bg_7.jpg' %});">
 				   		<div class="overlay"></div>
 				   		<div class="container-fluid">
 				   			<div class="row">
@@ -131,7 +449,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
                         <p>
                            I specialize in creating seamless APIs, optimizing server-side operations, and building secure, scalable applications to drive success in the digital space.
                         </p>
-                        <p><a class="btn btn-primary btn-learn" href="#portfolio">Discover My Projects <i class="icon-briefcase3"></i></a></p>
+                        <p><a class="btn btn-primary btn-learn" href="#" data-nav-section="work">Discover My Projects <i class="icon-briefcase3"></i></a></p>
                         
 											</div>
 					   				</div>
@@ -186,8 +504,8 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 							<div class="row">
 								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
 									<div class="hire">
-										<h2>I am happy to let you know <br>that 10+ projects done sucessfully!</h2>
-										<a href="#" class="btn-hire">Hire me</a>
+										<h2>I am happy to let you know <br>that 15+ projects done successfully!</h2>
+										<a href="#" class="btn-hire" data-nav-section="contact">Hire me</a>
 									</div>
 								</div>
 							</div>
@@ -304,7 +622,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 </div>
 
 <!-- Duplicate section (Second) services row for layout consistency -->
-			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(static/portfolio/images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
+			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url({% static 'portfolio/images/cover_bg_1.jpg' %});" data-stellar-background-ratio="0.5">
 				<div class="overlay"></div>
 				<div class="colorlib-narrow-content">
 					<div class="row">
@@ -360,7 +678,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 								<h3>Django</h3>
 								<div class="progress">
 								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
+								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
 								    <span>70%</span>
 								  	</div>
 								</div>
@@ -370,8 +688,8 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 							<div class="progress-wrap">
 								<h3>Rest Framework</h3>
 								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="85"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
+								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="65"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:65%">
 								    <span>65%</span>
 								  	</div>
 								</div>
@@ -381,8 +699,8 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 							<div class="progress-wrap">
 								<h3>API Development</h3>
 								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
+								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="75"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
 								    <span>75%</span>
 								  	</div>
 								</div>
@@ -423,20 +741,20 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 						</div>
 					</div>
 					<div class="row">
-    <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-        <div class="accordion" id="accordionExample">
-            <!-- Panel 1: ALX Africa -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button 
-                        class="accordion-button" 
-                        type="button" 
-                        data-bs-toggle="collapse" 
-                        data-bs-target="#collapseOne" 
-                        aria-expanded="true" 
-                        aria-controls="collapseOne">
-                        ALX Africa
-                    </button>
+					<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+						<div class="accordion" id="accordionExample">
+							<!-- Panel 1: ALX Africa -->
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="headingOne">
+									<button
+									class="accordion-button" 
+									type="button" 
+									data-bs-toggle="collapse" 
+									data-bs-target="#collapseOne" 
+									aria-expanded="true" 
+									aria-controls="collapseOne">
+									ALX Africa
+                    				</button>
                 </h2>
                 <div 
                     id="collapseOne" 
@@ -588,7 +906,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 					</div>
 					<div class="row">
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(static/portfolio/images/img-1.jpg);">
+							<div class="project" style="background-image: url({% static 'portfolio/images/img-1.jpg' %});">
 								<div class="desc">
 									<div class="con">
 										<h3><a href="https://github.com/ANTHONY8652/Library-Management-System-API">Project 01</a></h3>
@@ -603,7 +921,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 							</div>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(static/portfolio/images/img-2.jpg);">
+							<div class="project" style="background-image: url({% static 'portfolio/images/img-2.jpg' %});">
 								<div class="desc">
 									<div class="con">
 										<h3><a href="https://github.com/ANTHONY8652/Alx_DjangoLearnLab/tree/main/social_media_api">Project 2</a></h3>
@@ -618,7 +936,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 							</div>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-							<div class="project" style="background-image: url(static/portfolio/images/img-3.jpg);">
+							<div class="project" style="background-image: url({% static 'portfolio/images/img-3.jpg' %});">
 								<div class="desc">
 									<div class="con">
 										<h3><a href="https://github.com/ANTHONY8652/Task-Management-API">Project 3</a></h3>
@@ -633,7 +951,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 							</div>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-							<div class="project" style="background-image: url(static/portfolio/images/img-4.jpg);">
+							<div class="project" style="background-image: url({% static 'portfolio/images/img-4.jpg' %});">
 								<div class="desc">
 									<div class="con">
 										<h3><a href="https://github.com/ANTHONY8652/Movie-Review-API">Project 4</a></h3>
@@ -648,7 +966,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 							</div>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(static/portfolio/images/img-5.jpg);">
+							<div class="project" style="background-image: url({% static 'portfolio/images/img-5.jpg' %});">
 								<div class="desc">
 									<div class="con">
 										<h3><a href="https://github.com/ANTHONY8652/E-Commerce-API">Project 5</a></h3>
@@ -663,7 +981,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 							</div>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(static/portfolio/images/img-6.jpg);">
+							<div class="project" style="background-image: url({% static 'portfolio/images/img-6.jpg' %});">
 								<div class="desc">
 									<div class="con">
 										<h3><a href="https://github.com/ANTHONY8652/Alx_DjangoLearnLab/tree/main/django_blog">Work 06</a></h3>
@@ -697,7 +1015,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 					<div class="row">
 						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="blog-entry">
-								<a href="https://github.com/ANTHONY8652/Library-Management-System-API" class="blog-img"><img src="static/portfolio/images/blog-1.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<a href="https://github.com/ANTHONY8652/Library-Management-System-API" class="blog-img"><img src="{% static 'portfolio/images/blog-1.jpg' %}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
 									<span><small>October, 2024 </small> | <small> Web Development </small> | <small> <i class="icon-bubble3"></i> </small></span>
 									<h3><a href="https://github.com/ANTHONY8652/Library-Management-System-API">Library Management API</a></h3>
@@ -707,7 +1025,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 						</div>
 						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
 							<div class="blog-entry">
-								<a href="https://github.com/ANTHONY8652/" class="blog-img"><img src="static/portfolio/images/blog-2.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<a href="https://github.com/ANTHONY8652/" class="blog-img"><img src="{% static 'portfolio/images/blog-2.jpg' %}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
 									<span><small>September, 2024 </small> | <small> Web Development </small> | <small> <i class="icon-bubble3"></i></small></span>
 									<h3><a href="https://github.com/ANTHONY8652/Task-Management-API">Task Management API</a></h3>
@@ -717,7 +1035,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 						</div>
 						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="blog-entry">
-								<a href="https://github.com/ANTHONY8652/Alx_DjangoLearnLab/tree/main/social_media_api" class="blog-img"><img src="static/portfolio//images/blog-3.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<a href="https://github.com/ANTHONY8652/Alx_DjangoLearnLab/tree/main/social_media_api" class="blog-img"><img src="{% static 'portfolio/images/blog-3.jpg' %}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 								<div class="desc">
 									<span><small>August, 2024 </small> | <small> Web Development </small> | <small> <i class="icon-bubble3"></i></small></span>
 									<h3><a href="https://github.com/ANTHONY8652/Alx_DjangoLearnLab/tree/main/social_media_api">Social Media API</a></h3>
@@ -749,7 +1067,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									<i class="icon-globe-outline"></i>
 								</div>
 								<div class="colorlib-text">
-									<p><a href="#">githinjianthony720@gmail.com</a></p>
+									<p><a href="mailto:githinjianthony720@gmail.com">githinjianthony720@gmail.com</a></p>
 								</div>
 							</div>
 
@@ -767,7 +1085,7 @@ Copyright <script>document.write(new Date().getFullYear());</script> All rights 
 									<i class="icon-phone"></i>
 								</div>
 								<div class="colorlib-text">
-									<p><a href="tel://">+254 113 186 147</a></p>
+									<p><a href="tel:+254113186147">+254 113 186 147</a></p>
 								</div>
 							</div>
 						</div>

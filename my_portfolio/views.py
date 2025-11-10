@@ -47,7 +47,7 @@ def index(request):
     }
     
     # Render the 'index.html' template with the above context.
-    return render(request, 'portfolio/porto.html', context)
+    return render(request, 'portfolio/index.html', context)
 
 def contact_view(request):
     if request.method == 'POST':
