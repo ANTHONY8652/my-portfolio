@@ -78,17 +78,24 @@ def contact_view(request):
 
 def download_cv(request):
     """View to serve the CV PDF file"""
-    cv = CV.objects.first()
-    if cv and cv.cv:
-        try:
-            return FileResponse(cv.cv.open(), as_attachment=True, filename='Anthony_Githinji_CV.pdf')
-        except:
-            pass
-    
-    # Fallback to static file if CV model doesn't have file
-    static_path = os.path.join(settings.STATICFILES_DIRS[0], 'portfolio', 'resume', 'My CV.pdf')
-    if os.path.exists(static_path):
-        return FileResponse(open(static_path, 'rb'), as_attachment=True, filename='Anthony_Githinji_CV.pdf')
+    try:
+        cv = CV.objects.first()
+        if cv and cv.cv:
+            try:
+                return FileResponse(cv.cv.open(), as_attachment=True, filename='Anthony_Githinji_CV.pdf')
+            except Exception as e:
+                # Log error in production
+                if settings.DEBUG:
+                    print(f"Error opening CV file: {e}")
+        
+        # Fallback to static file if CV model doesn't have file
+        if settings.STATICFILES_DIRS:
+            static_path = os.path.join(settings.STATICFILES_DIRS[0], 'portfolio', 'resume', 'My CV.pdf')
+            if os.path.exists(static_path):
+                return FileResponse(open(static_path, 'rb'), as_attachment=True, filename='Anthony_Githinji_CV.pdf')
+    except Exception as e:
+        if settings.DEBUG:
+            print(f"Error in download_cv: {e}")
     
     raise Http404("CV not found")
 
